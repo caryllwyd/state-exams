@@ -47,7 +47,7 @@ def plot_progress():
     total_work = [int(row[4]) for row in data]
     
     plt.figure(figsize=(10, 5))
-    plt.plot(timestamps, total_work, marker="", linestyle="-", color="b", alpha = 0.3,label="Total Work")
+    plt.plot(timestamps, total_work, marker="", linestyle="-", color="b", alpha = 0.3,label="Estimated total page count")
     plt.fill_between(timestamps, total_work, color="b", alpha=0.3)
 
     plt.plot(timestamps, progress, marker="", linestyle="-", color="r", label="Progress")
@@ -67,7 +67,7 @@ def plot_progress():
 if __name__ == "__main__":
     update = input("Do you want to update? (Y/N): ")
     if update == "Y":
-        total_work = int(input("Enter the expected total amount of pages: "))  # Allow user to re-enter total work each time
+        total_work = int(input("Enter the total amount of pages to write: "))
         new_progress = int(input("Enter the number of pages written so far: "))
         update_progress(new_progress, total_work)
     plot_progress()

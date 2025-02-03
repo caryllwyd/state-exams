@@ -67,7 +67,7 @@ def plot_progress():
 if __name__ == "__main__":
     update = input("Do you want to update? (Y/N): ")
     if update == "Y":
-        total_work = int(input("Enter the total amount of topics to cover: "))  # Allow user to re-enter total work each time
+        total_work = 52  # Allow user to re-enter total work each time
         new_progress = int(input("Enter the amount of topics covered so far: "))
         update_progress(new_progress, total_work)
     plot_progress()
