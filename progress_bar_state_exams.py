@@ -4,7 +4,7 @@ import datetime
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
-PROGRESS_FILE = "progress_thesis.csv"
+PROGRESS_FILE = "progress_state_exams.csv"
 
 # Function to load progress from CSV
 def load_progress():
@@ -57,17 +57,17 @@ def plot_progress():
     
     plt.xlabel("Date")
     plt.ylabel("Progress")
-    plt.title("Thesis Progress Over Time")
+    plt.title("First Look at State Exam Sub-Topic (Progress Over Time)")
     plt.xticks(rotation=45)
     plt.legend()
     plt.grid()
-    plt.savefig("thesis_progress_plot.png", dpi=200)
+    plt.savefig("state_exam_progress_plot.png", dpi=200)
 
 # Example Usage
 if __name__ == "__main__":
     update = input("Do you want to update? (Y/N): ")
     if update == "Y":
-        total_work = int(input("Enter the expected total amount of pages: "))  # Allow user to re-enter total work each time
-        new_progress = int(input("Enter the number of pages written so far: "))
+        total_work = int(input("Enter the total amount of topics to cover: "))  # Allow user to re-enter total work each time
+        new_progress = int(input("Enter the amount of topics covered so far: "))
         update_progress(new_progress, total_work)
     plot_progress()
